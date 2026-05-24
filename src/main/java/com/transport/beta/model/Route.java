@@ -31,16 +31,17 @@ public class Route {
     @OneToMany(mappedBy = "route", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Bus> busList;
 
-
+    @OneToMany(mappedBy = "route", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Passenger> activePassengerList;
 
+    @Column(name = "route_length", columnDefinition = "INTEGER DEFAULT '0'")
     private Integer routeLength;
 
-    private List<DepoDto> depoList;
+    private List<Depo> depoList;
 
-    private List<BusStopDto> busStopList;
+    private List<BusStop> busStopList;
 
-    private List<CityDto> cities;
+    private List<City> cities;
 
     private List<StateDto> states;
 
